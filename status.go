@@ -1,10 +1,17 @@
 package main
 
 const (
-	join_net = iota
-	request_hold
-	holing
-	confirm_hold
-	send_to
-	broadcasting
+	SEQ_START = iota
+	SEQ_START_OK
+	SEQ_HEAD
+	SEQ_HEAD_OK
+)
+
+const (
+	JOINNET = iota
+	REQUESTHOLE
+	HOLING
+	HOLED
+	SENDTO
+	BROADCASTING
 )

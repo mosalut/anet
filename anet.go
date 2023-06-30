@@ -1,12 +1,18 @@
 package main
 
-import (
-	"log"
-)
+var anet struct {
+	run func() error
+	monitor func() error
+}
 
-func run() {
-	err := listenUDP()
-	if err != nil {
-		log.Fatal(err)
+func anetInit() {
+	anet.run = func() error {
+		err := listenUDP()
+		if err != nil {
+			return err
+		}
+	}
+
+	anet.monitor = func(uint8) error {
 	}
 }

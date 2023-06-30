@@ -17,8 +17,13 @@ func init() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
+	anetInit()
 }
 
 func main() {
-	run()
+	err := anet.run()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
